@@ -7,11 +7,9 @@ const symbolEl = document.getElementById("symbol");
 const generateEl = document.getElementById("generate");
 const numberEl = document.getElementById("number");
 const upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const lowerLetters = "abcdefghiklmnopqrstuvwxyz";
+const lowerLetters = "abcdefghijklmnopqrstuvwxyz";
 const numbers = "0123456789";
 const symbols = "~!@#$%^&*()_+=|";
-
-
 
 const getLowercase = () => lowerLetters[Math.floor(Math.random() * lowerLetters.length)];
 
@@ -32,7 +30,6 @@ const generatePassword = () => {
 }
 
 const generateX = () => {
-    console.log(getLowercase)
     const xs = [];
     if(upperEl.checked){
         xs.push(getUppercase());
@@ -52,6 +49,7 @@ const generateX = () => {
 }
 
 generateEl.addEventListener("click", generatePassword);
+
 copyEl.addEventListener("click", () => {
     const textarea = document.createElement("textarea");
     const password = PwEl.innerText;
@@ -65,4 +63,3 @@ copyEl.addEventListener("click", () => {
     textarea.remove();
     alert("Password copied to clipboard");
 })
-console.log(PwEl)
